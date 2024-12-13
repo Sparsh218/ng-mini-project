@@ -7,9 +7,7 @@ import { BehaviorSubject, catchError, map, Subject, throwError } from 'rxjs';
 import { User } from '../model/user.model';
 import { Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class AuthService {
 
     userEvent: Subject<User> = new BehaviorSubject<User>(null);
@@ -31,6 +29,7 @@ export class AuthService {
     .subscribe({
         next: data => {
             this.userEvent.next(data);
+            this.router.navigate(["/"]);
         },
         error: error => this.handleError(error)
     });
@@ -51,10 +50,15 @@ export class AuthService {
     .subscribe({
         next: data => {
             this.userEvent.next(data);
-            this.router.navigate(["recipe"]);
+            this.router.navigate(["/"]);
         },
         error: error => this.handleError(error)
     });
+  }
+
+  logout() {
+    this.userEvent.next(null);
+    this.router.navigate(["auth"]);
   }
 
   handleError(error: Error) {

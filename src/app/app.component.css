@@ -1,5 +1,24 @@
-.container {
-    justify-content: center;
-    align-content: center;
-    display: flex;
+.navbar {
+    background-color: rgb(200, 163, 235);
+}
+
+.nav-item .nav-link {
+    color: black; /* Default text color for links */
+    padding: 8px 12px; /* Adds spacing to the links */
+    border-radius: 5px; /* Rounds the corners of the links */
+}
+
+.nav-item .nav-link:hover, 
+.nav-item .nav-link.active {
+    color: white; /* Default text color for links */
+    padding: 8px 12px; /* Adds spacing to the links */
+    border-radius: 5px; /* Rounds the corners of the links */
+    background-color: rgb(166, 135, 196);
+}
+
+.btn:hover {
+    color: white; /* Default text color for links */
+    padding: 8px 12px; /* Adds spacing to the links */
+    border-radius: 5px; /* Rounds the corners of the links */
+    background-color: rgb(166, 135, 196);
 }

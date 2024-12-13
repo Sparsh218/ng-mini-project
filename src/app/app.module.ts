@@ -3,22 +3,22 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthComponent } from './auth/auth/auth.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { RecipeHomeComponent } from './recipe/components/recipe-home/recipe-home.component';
+import { HomeComponent } from './home/home.component';
+import { ShoppingHomeComponent } from './shopping/components/shopping-home/shopping-home.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
-    RecipeHomeComponent
+    RecipeHomeComponent,
+    HomeComponent,
+    ShoppingHomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule
+    AuthModule
   ],
   providers: [
     provideClientHydration(),

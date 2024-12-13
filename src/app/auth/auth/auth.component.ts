@@ -10,7 +10,7 @@ import { AuthService } from '../auth.service';
 export class AuthComponent {
 
   constructor(private authService: AuthService) {}
-  isLogin: boolean = false;
+  isLogin: boolean = true;
 
   onSubmit(form: NgForm) {
     if (this.isLogin) {

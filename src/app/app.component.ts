@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 import { map, take } from 'rxjs';
 import { User } from './model/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ import { User } from './model/user.model';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private authService: AuthService) {}
+  isLoggedIn: boolean = false;
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     
@@ -23,7 +26,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  autoLogin() {
-
+  logout() {
+    this.authService.logout();
   }
 }
